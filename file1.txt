@@ -1,0 +1,16 @@
+$( function () {
+	$('.numericField').keydown(function (event) {
+		if (/[0-9]/.test(String.fromCharCode(event.keyCode)) || event.keyCode == 8) {
+			return true;
+		} else return false;
+});
+
+
+	$('.Validation').bind('click', function () {
+		if ( !(/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}/.test($('.cardNumberField').val())) ) {
+			alert('Ошибка! Введите цифрами в формате хххх-хххх-хххх-хххх.');
+			$('.cardNumberField').val('');
+		}
+	})
+});
+
